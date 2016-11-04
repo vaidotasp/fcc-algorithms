@@ -7,23 +7,16 @@ function diffArray(arr1, arr2) {
 
   let combinedArray = arr1.concat(arr2); 
 
-  let filtered = combinedArray.filter(uniqueSort)
+  let filtered = combinedArray.filter(uniqueSort);
   function uniqueSort(value){
     if(arr1.indexOf(value) === -1) {
       return true;
     } else if (arr2.indexOf(value) === -1){
       return true;
     }
-    
-    console.log(value);
-  
-      }
- 
-  
-  console.log(combinedArray);
-  console.log(filtered);
-
   }
+  return console.log(filtered);
+}
 
 
 diffArray([1, 2, 99, 3, 5, 6], [1, 2, 3, 4, 5]);
