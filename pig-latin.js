@@ -1,11 +1,13 @@
 'use strict'
 function translatePigLatin(str) {
-  let vowels = ["a", "e", "i", "o", "u", "y"];
+  let vowels = ["a", "i", "o", "u","e","y"];
   let splitString = str.split('');
   let answer ='';
   
-  checkFirstLetter(vowels, str);
+  
   notVowelfirst(vowels, str);
+  checkFirstLetter(vowels, str);
+  
   
   function checkFirstLetter(vowels, str) {
     for (let i=0;i<vowels.length;i++) {
@@ -17,17 +19,17 @@ function translatePigLatin(str) {
   }
   
   function notVowelfirst(vowels, str) {
-    console.log(vowels, str);
-    console.log(splitString.indexOf(vowels[0]))
-    splitString.map(function(obj) {
-      if ()
-    })
+    for (let i=0; i<vowels.length; i++) {
+      if (splitString.indexOf(vowels[i]) !== -1) {
+        answer = str.slice(str.indexOf(vowels[i])) + 
+        str.slice(0, str.indexOf(vowels[i])) + 'ay' ;
+      }
+    }
   }
-  
-  
-  console.log(answer);
-  
+
+
+  return answer;
 }
-console.log(translatePigLatin("onsonant"));
+console.log(translatePigLatin("mineses"));
 
 
