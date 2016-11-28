@@ -10,6 +10,7 @@ function pairElement(str) {
           case "A":
             answer.push(newStr[i]);
             answer.push("T")
+            answer.splice(0,2, "A", "T");
             // code
             break;
           case "T":
