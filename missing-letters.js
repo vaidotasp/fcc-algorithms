@@ -13,7 +13,6 @@
      for (let i=0;i<str.length;i++) {
         if (str.charCodeAt(i) - checker === 0 || str.charCodeAt(i) - checker === 1) {
             checker = str.charCodeAt(i);
-            console.log('no missing found');
         } else {
             return String.fromCharCode(str.charCodeAt(i) -1);
         }
