@@ -12,19 +12,27 @@ but the final array should not be sorted in numerical order.
 
 
 function uniteUnique(arr) {
-  arr = Array.prototype.slice.call(arguments);
   
+  //turn all arguments (arrays) into a single array of elements
+  arr = Array.prototype.slice.call(arguments);
+
+
+  // flatten or merge arrays' elements into a single array
   arr = arr.reduce(function(prev, curr) {
     return prev.concat(curr);
   });
   
+  // finds and removes the dupes, checks the elements position and compares it to
+  // the incrementation, first elements index should be the first increment,
+  // works because indexOf finds the first intance of the element starting from
+  // the left side
   arr = arr.filter(function(elem, index, array) {
     return array.indexOf(elem) === index;
   });
   return arr;
 }
 
-console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
   
   
